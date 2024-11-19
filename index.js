@@ -14,9 +14,9 @@ app.use(cors({
 }))
 app.use("/api/auth", require("./routes/auth.route"))
 app.use("/api/todo", require("./routes/todo.route"))
-app.use("*", (req, res) => [
+app.use("*", (req, res) => {
     res.status(404).json({ message: `Resource Not Found ${req.method}:${req.url}` })
-])
+})
 
 mongoose.connect(process.env.MONGO_URL)
 mongoose.connection.once("open", () => {

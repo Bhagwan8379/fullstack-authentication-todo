@@ -34,5 +34,6 @@ exports.login = async (req, res) => {
     })
 }
 exports.logout = async (req, res) => {
+
     res.json({ message: "User LogOut Success" })
 }
